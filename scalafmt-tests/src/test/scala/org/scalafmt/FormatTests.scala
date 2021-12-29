@@ -75,6 +75,9 @@ class FormatTests extends FunSuite with CanRunTests with FormatAssertions {
       case Formatted.Success(code) => code
     }
     debug2.printTest()
+    // println("~~~~~~~~~~~~~")
+    // println(formattedAgain)
+    // println("~~~~~~~~~")
     assertEquals(formattedAgain, obtained, "Idempotency violated")
     if (!onlyManual) {
       assertEquals(obtained, t.expected)

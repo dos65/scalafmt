@@ -2836,3 +2836,67 @@ object a {
    */
   val a = 1
 }
+<<< fenced-code inside list
+docstrings.style = Asterisk
+docstrings.wrap = yes
+===
+object a {
+
+  /**
+    * foo:
+    * - item 1
+    *   line
+    * - item2
+    *   code:
+    *    ```
+    *    x match // <- mk indent
+    *    case 1 =>
+    *    ```
+    */
+  val a = 1
+}
+>>>
+object a {
+
+  /**
+   * foo:
+   *   - item 1 line
+   *   - item2 code:
+   *     ```
+   *     x match // <- mk indent
+   *     case 1 =>
+   *     ```
+   */
+  val a = 1
+}
+<<< table inside list
+docstrings.style = Asterisk
+docstrings.wrap = yes
+===
+object a {
+
+  /**
+    * foo:
+    * - item 1
+    *   line
+    * - item2
+    *   code:
+   *     | hdr1 | hdr22 | hdr333 |
+   *     | :- | -: | :-: | -: | :-: |
+   *     | r1 1 | r1 2 | r1 3 | r1 4 |
+    */
+  val a = 1
+}
+>>>
+object a {
+
+  /**
+   * foo:
+   *   - item 1 line
+   *   - item2 code:
+   *     | hdr1 | hdr22 | hdr333 |      |
+   *     |:-----|------:|:------:|-----:|
+   *     | r1 1 |  r1 2 |  r1 3  | r1 4 |
+   */
+  val a = 1
+}
